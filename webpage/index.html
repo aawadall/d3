@@ -15,13 +15,20 @@
         stroke: green;
     }
 
+    .link.from {
+        stroke: navy;
+        stroke-dasharray: 0, 2 1;
+    }
     .link.hates {
         stroke: red;
     }
-    .link.resolved {
+    .link.is {
         stroke-dasharray: 0, 2 1;
     }
 
+    .link.state {
+        stroke: deeppink;
+    }
     circle {
         fill: #ccc;
         stroke: #333;
@@ -39,24 +46,23 @@
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script>
         // http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
-        var links = [{
-                type: "likes",
-                source: "me",
-                target: "sleep"
-            },
-            {
-                type: "hates",
-                source: "me",
-                target: "molokhiya"
-            },
-            {
-                type: "is",
-                source: "me",
-                target: "me"
-            },
+        let links = [
+            {type: "likes", source: "me",        target: "sleep"     },
+            {type: "hates", source: "me",        target: "molokhiya" },
+            {type: "is",    source: "sleep",     target: "good"      },
+            {type: "is",    source: "molokhiya", target: "slimy"     },
+            {type: "is",    source: "soup",      target: "food"      },
+            {type: "is",    source: "molokhiya", target: "soup"      },
+            {type: "state", source: "soup",      target: "liquid"    },
+            {type: "from",  source: "molokhiya", target: "egypt"     },
+            {type: "from",  source: "biryani",   target: "india"     },
+            {type: "from",  source: "me",        target: "egypt"     },
+            {type: "likes", source: "me",        target: "biryani"   },
+            {type: "is",    source: "biryani",   target: "food"      },
+            {type: "state", source: "biryani",   target: "solid"     }
         ];
 
-        var nodes = {};
+        let nodes = {};
 
         // Compute the distinct nodes from the links.
         links.forEach(function (link) {
@@ -68,10 +74,10 @@
             });
         });
 
-        var width = 1600,
-            height = 1000;
+        const width = 1000,
+            height = 800;
 
-        var force = d3.layout.force()
+        const force = d3.layout.force()
             .nodes(d3.values(nodes))
             .links(links)
             .size([width, height])
@@ -80,13 +86,13 @@
             .on("tick", tick)
             .start();
 
-        var svg = d3.select("body").append("svg")
+        const svg = d3.select("body").append("svg")
             .attr("width", width)
             .attr("height", height);
 
         // Per-type markers, as they don't inherit styles.
         svg.append("defs").selectAll("marker")
-            .data(["EXEC", "EXEC"])
+            .data(["is", "likes", "hates", "state", "from"])
             .enter().append("marker")
             .attr("id", function (d) {
                 return d;
