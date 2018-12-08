@@ -24688,7 +24688,7 @@
 
         // Per-type markers, as they don't inherit styles.
         svg.append("defs").selectAll("marker")
-            .data(["suit", "licensing", "resolved"])
+            .data(["EXEC", "EXECUTE", "resolved"])
             .enter().append("marker")
             .attr("id", function (d) {
                 return d;
