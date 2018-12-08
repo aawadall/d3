@@ -3,16 +3,16 @@
 <style>
     .link {
         fill: none;
-        stroke: #666;
+        stroke: green;
         stroke-width: 1.5px;
     }
 
     #licensing {
-        fill: green;
+        fill: red;
     }
 
     .link.licensing {
-        stroke: green;
+        stroke: yellow;
     }
 
     .link.resolved {
@@ -24670,8 +24670,8 @@
             });
         });
 
-        var width = 960,
-            height = 500;
+        var width = 1200,
+            height = 750;
 
         var force = d3.layout.force()
             .nodes(d3.values(nodes))
@@ -24688,7 +24688,7 @@
 
         // Per-type markers, as they don't inherit styles.
         svg.append("defs").selectAll("marker")
-            .data(["EXEC", "EXECUTE", "resolved"])
+            .data(["EXEC", "EXECUTE"])
             .enter().append("marker")
             .attr("id", function (d) {
                 return d;
