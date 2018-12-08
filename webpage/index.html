@@ -3,18 +3,21 @@
 <style>
     .link {
         fill: none;
-        stroke: green;
+        stroke: black;
         stroke-width: 1.5px;
     }
 
-    #licensing {
-        fill: red;
+    #likes {
+        fill: green;
     }
 
-    .link.licensing {
-        stroke: yellow;
+    .link.likes {
+        stroke: green;
     }
 
+    .link.hates {
+        stroke: red;
+    }
     .link.resolved {
         stroke-dasharray: 0, 2 1;
     }
@@ -45,6 +48,11 @@
                 type: "hates",
                 source: "me",
                 target: "molokhiya"
+            },
+            {
+                type: "is",
+                source: "me",
+                target: "me"
             },
         ];
 
