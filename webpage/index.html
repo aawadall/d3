@@ -7,16 +7,13 @@
         stroke-width: 1.5px;
     }
 
-    #likes {
-        fill: green;
-    }
 
     .link.likes {
         stroke: green;
     }
 
     .link.from {
-        stroke: navy;
+        stroke: brown;
         stroke-dasharray: 0, 2 1;
     }
     .link.hates {
@@ -116,13 +113,13 @@
                 return "url(#" + d.type + ")";
             });
 
-        var circle = svg.append("g").selectAll("circle")
+        const circle = svg.append("g").selectAll("circle")
             .data(force.nodes())
             .enter().append("circle")
             .attr("r", 6)
             .call(force.drag);
 
-        var text = svg.append("g").selectAll("text")
+        const text = svg.append("g").selectAll("text")
             .data(force.nodes())
             .enter().append("text")
             .attr("x", 8)
@@ -139,7 +136,7 @@
         }
 
         function linkArc(d) {
-            var dx = d.target.x - d.source.x,
+            const dx = d.target.x - d.source.x,
                 dy = d.target.y - d.source.y,
                 dr = Math.sqrt(dx * dx + dy * dy);
             return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
