@@ -44,11 +44,6 @@
             {
                 type: "EXEC",
                 source: "[DBO].[PCSLE_EXCH_ACQ_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSLE_EXCH_ACQ_CSV]",
                 target: "MASTER..XP_CMDSHELL"
             },
             {
@@ -61,11 +56,7 @@
                 source: "[DBO].[PCSLE_EXCH_ACQ_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSLE_EXCH_ACQ_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSLE_EXCH_ACQ_CSV_MONTHLY]",
@@ -251,11 +242,7 @@
                 source: "[DBO].[PCSLE_EXCH_ISS_CSV]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSLE_EXCH_ISS_CSV]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSLE_EXCH_ISS_CSV]",
@@ -271,11 +258,7 @@
                 source: "[DBO].[PCSLE_EXCH_ISS_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSLE_EXCH_ISS_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSLE_EXCH_ISS_CSV_MONTHLY]",
@@ -726,11 +709,7 @@
                 source: "SCSL_ADMINCARD",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "SCSL_ADMINCARD",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "SCSL_ADMINCARD",
@@ -766,11 +745,7 @@
                 source: "[DBO].[PCSL_ATB_ACQUIRER_CSV_A]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ACQUIRER_CSV_A]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ACQUIRER_CSV_A]",
@@ -786,11 +761,7 @@
                 source: "[DBO].[PCSL_ATB_ACQUIRER_CSV_B]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ACQUIRER_CSV_B]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ACQUIRER_CSV_B]",
@@ -806,11 +777,7 @@
                 source: "[DBO].[PCSL_ATB_ACQ_CSV]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ACQ_CSV]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ACQ_CSV]",
@@ -826,11 +793,7 @@
                 source: "[DBO].[PCSL_ATB_ACQ_CSV_ABORTED]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ACQ_CSV_ABORTED]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ACQ_CSV_ABORTED]",
@@ -846,11 +809,7 @@
                 source: "[DBO].[PCSL_ATB_ACQ_CSV_REVERSAL]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ACQ_CSV_REVERSAL]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ACQ_CSV_REVERSAL]",
@@ -922,7 +881,7 @@
                 target: "PCSL_ATB_TOTALS_REPORT_ABORTED"
             },
             {
-                type: "EXECUTE",
+                type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ACQ_DETAILS_REPORT_ABORTED]",
                 target: "PCSL_ATB_TOTALS_REPORT_ABORTED\u0027"
             },
@@ -932,7 +891,7 @@
                 target: "PCSL_ATB_TOTALS_REPORT_ABORTED"
             },
             {
-                type: "EXECUTE",
+                type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ACQ_DETAILS_REPORT_ABORTED]",
                 target: "PCSL_ATB_EXPORT_REPORT"
             },
@@ -1206,23 +1165,15 @@
                 source: "[DBO].[PCSL_ATB_EFTS]",
                 target: "PCSL_ATB_MONERIS_PFS_EXPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_ATB_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_ATB_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -2001,11 +1952,7 @@
                 source: "[DBO].[PCSL_ATB_ISS_CSV]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ISS_CSV]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ISS_CSV]",
@@ -2021,11 +1968,7 @@
                 source: "[DBO].[PCSL_ATB_ISS_CSV_ABORTED]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ISS_CSV_ABORTED]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ISS_CSV_ABORTED]",
@@ -2041,11 +1984,7 @@
                 source: "[DBO].[PCSL_ATB_ISS_CSV_MB]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ISS_CSV_MB]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ISS_CSV_MB]",
@@ -2061,11 +2000,7 @@
                 source: "[DBO].[PCSL_ATB_ISS_CSV_REVERSAL]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_ATB_ISS_CSV_REVERSAL]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_ATB_ISS_CSV_REVERSAL]",
@@ -2336,28 +2271,15 @@
                 source: "[DBO].[PCSL_BRINKS_DEPOSITORY_CSV]",
                 target: "PCSL_BRINKS_DEPOSITORY_TOTALS_REPORT"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_BRINKS_DEPOSITORY_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_BRINKS_DEPOSITORY_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_BRINKS_DEPOSITORY_CSV]",
                 target: "%S"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_BRINKS_DEPOSITORY_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_BRINKS_DEPOSITORY_CSV]",
                 target: "%S"
             },
@@ -2366,58 +2288,33 @@
                 source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CASH_POSITIONS_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -2441,13 +2338,9 @@
                 source: "[DBO].[PCSL_CHECK_DELIVERY_LIST]",
                 target: "MASTER..SP_OADESTROY"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CHECK_IVR_CARDS]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CHECK_IVR_CARDS]",
                 target: "%S.\u0027,"
             },
@@ -2456,16 +2349,7 @@
                 source: "[DBO].[PCSL_CHECK_JOB_STATUS]",
                 target: "MSDB.DBO.SP_HELP_JOB\u0027)"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CHECK_PRELIMINARIES]",
-                target: "@NRC1"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CHECK_PRELIMINARIES]",
-                target: "@NRC2"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CHECK_PRELIMINARIES]",
@@ -2476,11 +2360,7 @@
                 source: "[DBO].[PCSL_CHECK_PRELIMINARIES]",
                 target: "MSDB.DBO.SP_HELP_JOB\u0027)"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CHECK_SL02_SETTLEMENT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CHECK_SL02_SETTLEMENT]",
@@ -2519,25 +2399,10 @@
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_ACQ_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ACQ_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_CYBR_ACQ_CSV]",
                 target: "%S"
             },
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ACQ_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_ACQ_CSV]",
                 target: "%S"
             },
@@ -2691,23 +2556,15 @@
                 source: "[DBO].[PCSL_CYBR_AFT_FILE]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_FILE]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_AFT_FILE]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_FILE]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_AFT_FILE]",
                 target: "%S.\u0027,"
             },
@@ -2721,43 +2578,27 @@
                 source: "[DBO].[PCSL_CYBR_AFT_FILE_DAILY]",
                 target: "PCSL_CYBR_AFT_FILE_EXPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_FILE_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_AFT_FILE_EXPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_FILE_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_AFT_FILE_EXPORT]",
                 target: "%S.\u0027,"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_FILE_EXPORT_ME]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_AFT_FILE_EXPORT_ME]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_FILE_EXPORT_ME]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_AFT_FILE_EXPORT_ME]",
                 target: "%S.\u0027,"
             },
@@ -2796,26 +2637,13 @@
                 source: "[DBO].[PCSL_CYBR_AFT_VAR_CB_FILE_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_VAR_CB_FILE_MONTHLY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_VAR_CB_FILE_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_AFT_VAR_CB_FILE_MONTHLY]",
                 target: "MASTER..XP_CMDSHELL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_AFT_VAR_CB_FILE_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_ATMB]",
@@ -3021,43 +2849,27 @@
                 source: "[DBO].[PCSL_CYBR_EBP_REPORT]",
                 target: "PCSL_CYBR_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_EXPORT_REPORT_NO_TRUNC]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_EXPORT_REPORT_NO_TRUNC]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_EXPORT_REPORT_NO_TRUNC]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_EXPORT_REPORT_NO_TRUNC]",
                 target: "%S.\u0027,"
             },
@@ -5456,28 +5268,15 @@
                 source: "[DBO].[PCSL_CYBR_ISS_CSV]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ISS_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ISS_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_ISS_CSV]",
                 target: "%S"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ISS_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_ISS_CSV]",
                 target: "%S"
             },
@@ -5486,36 +5285,19 @@
                 source: "[DBO].[PCSL_CYBR_ISS_CSV_MB]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ISS_CSV_MB]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ISS_CSV_MB]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_ISS_CSV_MB]",
                 target: "%S"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ISS_CSV_MB]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_ISS_CSV_MB]",
                 target: "%S"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ISS_CSV_MB_ORIG]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_ISS_CSV_MB_ORIG]",
@@ -5526,11 +5308,7 @@
                 source: "[DBO].[PCSL_CYBR_ISS_CSV_MB_ORIG]",
                 target: "MASTER..XP_CMDSHELL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_ISS_CSV_ORIG]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_ISS_CSV_ORIG]",
@@ -6046,33 +5824,21 @@
                 source: "[DBO].[PCSL_CYBR_TECH_FEES_EXPORT_EX]",
                 target: "PCSL_CYBR_TECH_FEES_DATA"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TECH_FEES_EXPORT_EX]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_TECH_FEES_EXPORT_EX]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TECH_FEES_EXPORT_EX]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_TECH_FEES_EXPORT_EX]",
                 target: "%S"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TECH_FEES_EXPORT_EX]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_TECH_FEES_EXPORT_EX]",
                 target: "%S"
             },
@@ -6086,26 +5852,14 @@
                 source: "[DBO].[PCSL_CYBR_TF_EXPORT_EX]",
                 target: "PCSL_CYBR_TF_DATA"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TF_EXPORT_EX]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_TF_EXPORT_EX]",
                 target: "MASTER..XP_CMDSHELL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TF_EXPORT_EX]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TF_EXPORT_EX]",
-                target: "@NRC"
-            },
+
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_TLF_2]",
@@ -6121,13 +5875,9 @@
                 source: "[DBO].[PCSL_CYBR_TLF_2]",
                 target: "PCSL_CYBR_EXPORT_REPORT"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TLF_2]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_TLF_2]",
                 target: "%S.\u0027,"
             },
@@ -6136,11 +5886,7 @@
                 source: "[DBO].[PCSL_CYBR_TLF_EXPORT]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TLF_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_CYBR_TLF_EXPORT]",
@@ -6151,13 +5897,9 @@
                 source: "[DBO].[PCSL_CYBR_TLF_EXPORT]",
                 target: "PCSL_CYBR_TLF_GET_DATA"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TLF_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_TLF_EXPORT]",
                 target: "%S.\u0027,"
             },
@@ -6176,23 +5918,15 @@
                 source: "[DBO].[PCSL_CYBR_TLF_EXPORT_VSCU]",
                 target: "PCSL_CYBR_TLF_GET_DATA_VSCU"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TLF_EXPORT_VSCU]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_TLF_EXPORT_VSCU]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_CYBR_TLF_EXPORT_VSCU]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_CYBR_TLF_EXPORT_VSCU]",
                 target: "%S.\u0027,"
             },
@@ -6211,76 +5945,7 @@
                 source: "[DBO].[PCSL_DCRYPT]",
                 target: "POSTILION_OFFICE.DBO.PTCSL_DECRYPT_PAN"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY]",
-                target: "@NRC3"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY_NOLIST_EX]",
-                target: "@NRC1"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY_NOLIST_EX]",
-                target: "@NRC2"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY_NOLIST_EX]",
-                target: "@NRC2"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY_NOLIST_EX]",
-                target: "@NRC3"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY_NOLIST_EX]",
-                target: "@NRC3"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY_NOLIST_EX]",
-                target: "@NRC3"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY_NOLIST_EX]",
-                target: "@NRC3"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DELIVERY_NOLIST_EX]",
-                target: "@NRC3"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_DEPOSIT_REPORT_DSCDC195]",
@@ -6291,36 +5956,7 @@
                 source: "[DBO].[PCSL_DEPOSIT_REPORT_GENERATE]",
                 target: "PCSL_DEPOSIT_REPORT_DSCDC195"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCG"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCG"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCG"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
@@ -6331,36 +5967,7 @@
                 source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
                 target: "SETTLEMENT_GSL.DBO.PSR_START_RSS05_JOB"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCG"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCG"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
-                target: "@NRCG"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_DOWNLOAD_HANDLER]",
@@ -6411,11 +6018,7 @@
                 source: "[DBO].[PCSL_EXCH_ACQ_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_EXCH_ACQ_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_EXCH_ACQ_CSV_MONTHLY]",
@@ -7001,23 +6604,15 @@
                 source: "[DBO].[PCSL_EXCH_DNS_SETTLEMENT_MONTHLY]",
                 target: "PCSL_EXCH_SETTLEMENT_MONTHLY"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_EXCH_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_EXCH_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_EXCH_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_EXCH_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -7431,11 +7026,7 @@
                 source: "[DBO].[PCSL_EXCH_ISS_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_EXCH_ISS_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_EXCH_ISS_CSV_MONTHLY]",
@@ -8061,43 +7652,27 @@
                 source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
                 target: "PCSL_GATB_ARN_DAILY_TRANS"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
                 target: "%S.\u0027,"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_GATB_ARN_COPYBOOK_EXPORT]",
                 target: "%S.\u0027,"
             },
@@ -8411,23 +7986,15 @@
                 source: "[DBO].[PCSL_GATB_DNS_SETTLEMENT_FDR]",
                 target: "PCSL_GATB_ARC_TOTALS_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GATB_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_GATB_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_GATB_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -8451,33 +8018,21 @@
                 source: "[DBO].[PCSL_GATB_FDR_TAPTRANS_EXPORT]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_FDR_TAPTRANS_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GATB_FDR_TAPTRANS_EXPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_GATB_FDR_TAPTRANS_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_GATB_FDR_TAPTRANS_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_GATB_FDR_TAPTRANS_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_GATB_FDR_TAPTRANS_EXPORT]",
                 target: "%S.\u0027,"
             },
@@ -8786,13 +8341,9 @@
                 source: "[DBO].[PCSL_GATB_RBC_CIC_LOAD]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_GATB_RBC_CIC_LOAD]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_GATB_RBC_CIC_LOAD]",
                 target: "%S.\u0027,"
             },
@@ -8861,21 +8412,13 @@
                 source: "[DBO].[PCSL_GATB_RBC_MK_REPORTS]",
                 target: "PCSL_GATB_RUN_RBC_REFINE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_RBC_MK_RUN]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GATB_RBC_MK_RUN]",
                 target: "PCSL_GATB_RBC_LOAD_DAILY_TFT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_RBC_MK_RUN]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GATB_RBC_MK_RUN]",
@@ -8891,26 +8434,8 @@
                 source: "[DBO].[PCSL_GATB_RBC_MK_START]",
                 target: "PCSL_GATB_RBC_MK_RUN"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_RBC_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_RBC_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_RBC_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GATB_RBC_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
+
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GATB_RBC_SETTLEMENT]",
@@ -8946,13 +8471,9 @@
                 source: "[DBO].[PCSL_GATB_RBC_XMIT_LOAD]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_GATB_RBC_XMIT_LOAD]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_GATB_RBC_XMIT_LOAD]",
                 target: "%S.\u0027,"
             },
@@ -9461,11 +8982,7 @@
                 source: "[DBO].[PCSL_GET_DEPOSITS]",
                 target: "PCSL_MSG_EMAIL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GET_SSF]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GMON_ALPHA_DELIVERY]",
@@ -9476,26 +8993,13 @@
                 source: "[DBO].[PCSL_GMON_ALPHA_DELIVERY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GMON_ALPHA_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GMON_ALPHA_DELIVERY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GMON_ALPHA_DELIVERY]",
                 target: "MASTER..XP_CMDSHELL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GMON_ALPHA_DELIVERY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GMON_DNET_EXPORT]",
@@ -9681,23 +9185,15 @@
                 source: "[DBO].[PCSL_GMON_DNS_SETTLEMENT]",
                 target: "PCSL_GMON_ARC_TOTALS_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_GMON_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_GMON_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_GMON_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_GMON_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -9951,11 +9447,7 @@
                 source: "[DBO].[PCSL_INT_ACQ_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_INT_ACQ_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_INT_ACQ_CSV_MONTHLY]",
@@ -10136,23 +9628,15 @@
                 source: "[DBO].[PCSL_INT_DNET_SUMMARY_MONTHLY]",
                 target: "PCSL_INT_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_INT_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_INT_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_INT_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_INT_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -10581,11 +10065,7 @@
                 source: "[DBO].[PCSL_INT_ISS_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_INT_ISS_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_INT_ISS_CSV_MONTHLY]",
@@ -11291,23 +10771,15 @@
                 source: "[DBO].[PCSL_MISC_DNS_SETTLEMENT_SCD]",
                 target: "PCSL_MISC_ARC_TOTALS_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_MISC_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_MISC_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_MISC_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_MISC_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -12271,23 +11743,15 @@
                 source: "[DBO].[PCSL_MONERIS_ADJUSTMENTS_ATB]",
                 target: "PCSL_FILL_MONERIS_ADJUSTMENTS"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_MON_025_DATA_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_MON_025_DATA_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_MON_026_DATA_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_MON_026_DATA_EXPORT]",
                 target: "%S.\u0027,"
             },
@@ -12306,28 +11770,15 @@
                 source: "[DBO].[PCSL_MON_ACQ_CSV]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_MON_ACQ_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_MON_ACQ_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_MON_ACQ_CSV]",
                 target: "%S"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_MON_ACQ_CSV]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_MON_ACQ_CSV]",
                 target: "%S"
             },
@@ -13016,43 +12467,27 @@
                 source: "[DBO].[PCSL_MON_EXPORT_CA_CSV_ECHO]",
                 target: "MASTER..XP_CMDSHELL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_MON_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_MON_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_MON_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_MON_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_MON_EXPORT_REPORT_NO_TRUNC]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_MON_EXPORT_REPORT_NO_TRUNC]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_MON_EXPORT_REPORT_NO_TRUNC]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_MON_EXPORT_REPORT_NO_TRUNC]",
                 target: "%S.\u0027,"
             },
@@ -14971,123 +14406,75 @@
                 source: "[DBO].[PCSL_MON_TLF_2]",
                 target: "PCSL_MON_EXPORT_REPORT"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_MON_TLF_2]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_MON_TLF_2]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_FILE_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_FILE_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_FILE_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_FILE_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_PRIZM_FILE_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
-                source: "[DBO].[PCSL_PRIZM_FILE_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_PRIZM_FILE_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_PRIZM_FILE_EXPORT]",
                 target: "%S.\u0027,"
             },
@@ -15151,46 +14538,25 @@
                 source: "[DBO].[PCSL_TREX_EXPORT]",
                 target: "PCSL_TREX_DATA_SHORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PCSL_TREX_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PCSL_TREX_EXPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PCSL_TREX_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PCSL_TREX_EXPORT]",
                 target: "%S.\u0027,"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PSSF_SWITCH_SELECT_HANDLER]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PSSF_SWITCH_SELECT_HANDLER]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PSSF_SWITCH_SELECT_HANDLER]",
                 target: "PSSF_LOG"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PSSF_SWITCH_SELECT_HANDLER]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[USPRPT_DCRETAIL_SERVICESUMMARY_CSL]",
@@ -15226,11 +14592,7 @@
                 source: "[DBO].[USPRPT_FLASH_INTERCHANGE_SUMMARY_CLIENT]",
                 target: "PCSL_ATB_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[USPRPT_MOBILEPAYMENTS_TXN_CSV]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[USPRPT_MOBILEPAYMENTS_TXN_CSV]",
@@ -15261,11 +14623,7 @@
                 source: "[DBO].[USPRPT_MON_MTD_EXPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[USPRPT_MON_MTD_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[USPRPT_SETTLEMENT_CUFIRETAIL]",
@@ -15312,7 +14670,7 @@
                 target: "USP_FLASH_INTERCHANGE_DAILYSUMMARY\u0027"
             },
             {
-                type: "EXECUTE",
+                type: "EXEC",
                 source: "[DBO].[USP_IMPORT_MTDFLASH_POSTPROCESSOR]",
                 target: "MSDB.DBO.SP_SEND_DBMAIL"
             },
@@ -16606,23 +15964,15 @@
                 source: "[DBO].[PGSL_ATB_DNS_SETTLEMENT]",
                 target: "PGSL_ATB_ARC_TOTALS_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_ATB_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_ATB_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_ATB_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_ATB_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -16726,33 +16076,21 @@
                 source: "[DBO].[PGSL_ATB_FDR_SETTLEMENT]",
                 target: "PGSL_ATB_ARC_TOTALS_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_ATB_FDR_TAPTRANS_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_ATB_FDR_TAPTRANS_EXPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_ATB_FDR_TAPTRANS_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_ATB_FDR_TAPTRANS_EXPORT]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_ATB_FDR_TAPTRANS_EXPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_ATB_FDR_TAPTRANS_EXPORT]",
                 target: "%S.\u0027,"
             },
@@ -16876,13 +16214,9 @@
                 source: "[DBO].[PGSL_ATB_RBC_CIC]",
                 target: "PGSL_ATB_RBC_ALL100"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_ATB_RBC_CIC_LOAD]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_ATB_RBC_CIC_LOAD]",
                 target: "%S.\u0027,"
             },
@@ -16946,21 +16280,13 @@
                 source: "[DBO].[PGSL_ATB_RBC_MK_REPORTS]",
                 target: "PGSL_ATB_RBC_DIFFERENCE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_ATB_RBC_MK_RUN]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_ATB_RBC_MK_RUN]",
                 target: "PGSL_ATB_RBC_LOAD_DAILY_TFT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_ATB_RBC_MK_RUN]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_ATB_RBC_MK_RUN]",
@@ -16971,33 +16297,9 @@
                 source: "[DBO].[PGSL_ATB_RBC_MK_RUN]",
                 target: "PGSL_ATB_RBC_FILL_FEES"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_ATB_RBC_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_ATB_RBC_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_ATB_RBC_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_ATB_RBC_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_ATB_RBC_XMIT_LOAD]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_ATB_RBC_XMIT_LOAD]",
                 target: "%S.\u0027,"
             },
@@ -17396,11 +16698,7 @@
                 source: "[DBO].[PGSL_EXC_ACQ_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_ACQ_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_ACQ_CSV_MONTHLY]",
@@ -17686,23 +16984,15 @@
                 source: "[DBO].[PGSL_EXC_EXCHANGE_POSTINGS]",
                 target: "PGSL_EXC_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_EXC_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_EXC_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -17741,11 +17031,7 @@
                 source: "[DBO].[PGSL_EXC_ISS_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_ISS_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_ISS_CSV_MONTHLY]",
@@ -17786,11 +17072,7 @@
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
@@ -17801,51 +17083,31 @@
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
                 target: "PGSL_EXC_APP_METRICS"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
                 target: "PGSL_EXC_DEC_METRICS"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
                 target: "PGSL_EXC_APP_METRICS"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
                 target: "PGSL_EXC_DEC_METRICS"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
@@ -17856,61 +17118,37 @@
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
                 target: "PGSL_EXC_APP_METRICS_EX_OLENA"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
                 target: "PGSL_EXC_DEC_METRICS_EX_OLENA"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
                 target: "PGSL_EXC_REV_METRICS_EX"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
                 target: "PGSL_EXC_APP_METRICS_EX_OLENA"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
                 target: "PGSL_EXC_DEC_METRICS_EX_OLENA"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
                 target: "PGSL_EXC_REV_METRICS_EX"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXC_METRICS_EXPORT_EX_OLENA]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_EXC_MONTHLY]",
@@ -19076,31 +18314,7 @@
                 source: "[DBO].[PGSL_EXC_UPS_ISS_DETAILS_REPORT]",
                 target: "PGSL_EXC_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXTERNAL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXTERNAL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXTERNAL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXTERNAL_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_EXTERNAL_DELIVERY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_FICANEX_MONTHLY]",
@@ -19211,11 +18425,7 @@
                 source: "[DBO].[PGSL_FIS_ACQ_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_FIS_ACQ_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_FIS_ACQ_CSV_MONTHLY]",
@@ -19976,21 +19186,13 @@
                 source: "[DBO].[PGSL_FIS_EPOC_LOAD_PDF]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_FIS_EPOC_LOAD_PDF]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_FIS_EPOC_LOAD_PDF]",
                 target: "MASTER..XP_CMDSHELL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_FIS_EPOC_LOAD_PDF]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_FIS_EPOC_MK_DETAILS]",
@@ -20001,11 +19203,7 @@
                 source: "[DBO].[PGSL_FIS_EPOC_MK_DETAILS]",
                 target: "PGSL_FIS_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_FIS_EPOC_MK_RUN]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_FIS_EPOC_MK_RUN]",
@@ -20056,23 +19254,15 @@
                 source: "[DBO].[PGSL_FIS_EXCHANGE_POSTINGS]",
                 target: "PGSL_FIS_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_FIS_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_FIS_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_FIS_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_FIS_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -20081,11 +19271,7 @@
                 source: "[DBO].[PGSL_FIS_ISS_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_FIS_ISS_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_FIS_ISS_CSV_MONTHLY]",
@@ -20541,41 +19727,13 @@
                 source: "[DBO].[PGSL_FIS_UPS_ISS_DETAILS_REPORT]",
                 target: "PGSL_FIS_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_GATEWAY_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_GATEWAY_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_GATEWAY_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_GATEWAY_DELIVERY]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_GATEWAY_DELIVERY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_INT_ACQ_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_INT_ACQ_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_INT_ACQ_CSV_MONTHLY]",
@@ -20631,13 +19789,9 @@
                 source: "[DBO].[PGSL_INT_ACSS_SUMMARY_EXT]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_INT_ACSS_SUMMARY_EXT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_INT_ACSS_SUMMARY_EXT]",
                 target: "%S.\u0027,"
             },
@@ -20901,23 +20055,15 @@
                 source: "[DBO].[PGSL_INT_EXCEPTION_REPORTS_L1]",
                 target: "PGSL_INT_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_INT_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_INT_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_INT_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_INT_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -20932,7 +20078,7 @@
                 target: "PGSL_INT_FILL_ACSS_CUBE"
             },
             {
-                type: "EXECUTE",
+                type: "EXEC",
                 source: "[DBO].[PGSL_INT_GET_RECON_FROM_ARCHIVE]",
                 target: "AS"
             },
@@ -20941,11 +20087,7 @@
                 source: "[DBO].[PGSL_INT_ISS_CSV_MONTHLY]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_INT_ISS_CSV_MONTHLY]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_INT_ISS_CSV_MONTHLY]",
@@ -21021,43 +20163,27 @@
                 source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
                 target: "PGSL_INT_MTD_FILE_DATA_EX"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
                 target: "%S.\u0027,"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_INT_MTD_FILE_EXPORT_EX]",
                 target: "%S.\u0027,"
             },
@@ -21136,11 +20262,7 @@
                 source: "[DBO].[PGSL_INT_RECON_MK_POS]",
                 target: "[TOR-DB01].SETTLEMENT_REPORTS_ARCHIVE.DBO.PGSL_INT_GET_RECON_AUX_DATA"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_INT_RECON_MK_POS_RUN]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_INT_RECON_MK_POS_RUN]",
@@ -22076,13 +21198,9 @@
                 source: "[DBO].[PGSL_MISC_CIRRUS_LOAD]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CIRRUS_LOAD]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MISC_CIRRUS_LOAD]",
                 target: "%S.\u0027,"
             },
@@ -22096,31 +21214,19 @@
                 source: "[DBO].[PGSL_MISC_CIRRUS_LOAD_CIC]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CIRRUS_LOAD_CIC]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MISC_CIRRUS_LOAD_CIC]",
                 target: "%S.\u0027,"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CIRRUS_MK]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_MISC_CIRRUS_MK]",
                 target: "PGSL_MISC_CIRRUS_LOAD_TFT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CIRRUS_MK]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_MISC_CIRRUS_MK]",
@@ -22131,26 +21237,7 @@
                 source: "[DBO].[PGSL_MISC_CIRRUS_MK]",
                 target: "PGSL_MISC_TRANSFER_CIRRUS_FEES"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CIRRUS_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CIRRUS_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CIRRUS_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CIRRUS_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_MISC_CIRRUS_TFT_ACQ_SCD_DIFFERENCE]",
@@ -22241,13 +21328,9 @@
                 source: "[DBO].[PGSL_MISC_CPN_LOAD]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MISC_CPN_LOAD]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MISC_CPN_LOAD]",
                 target: "%S.\u0027,"
             },
@@ -22841,23 +21924,15 @@
                 source: "[DBO].[PGSL_MISC_DNS_SETTLEMENT_SCD]",
                 target: "PGSL_MISC_ARC_TOTALS_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MISC_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_MISC_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MISC_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MISC_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -23896,23 +22971,15 @@
                 source: "[DBO].[PGSL_MON_DNS_SETTLEMENT_SCD]",
                 target: "PGSL_MON_ARC_TOTALS_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MON_EXPORT_REPORT]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_MON_EXPORT_REPORT]",
                 target: "MASTER..XP_CMDSHELL"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MON_EXPORT_REPORT]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MON_EXPORT_REPORT]",
                 target: "%S.\u0027,"
             },
@@ -23956,13 +23023,9 @@
                 source: "[DBO].[PGSL_MON_LOAD_CIC]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MON_LOAD_CIC]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MON_LOAD_CIC]",
                 target: "%S.\u0027,"
             },
@@ -24046,26 +23109,7 @@
                 source: "[DBO].[PGSL_MON_NCSUMMARY]",
                 target: "PGSL_MON_EXPORT_REPORT"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MON_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MON_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MON_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MON_PARSE_CIC_ROW]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_MON_REFINE]",
@@ -24121,18 +23165,9 @@
                 source: "[DBO].[PGSL_MON_SETTLEMENT]",
                 target: "PGSL_MON_DNS_SETTLEMENT"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MON_START_TEL_MK]",
-                target: "@NRC"
-            },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MON_START_TEL_MK]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MON_START_TEL_MK]",
                 target: "TRANSFER"
             },
@@ -24141,11 +23176,7 @@
                 source: "[DBO].[PGSL_MON_START_TEL_MK]",
                 target: "PGSL_MON_LOAD_DAILY_TEL"
             },
-            {
-                type: "EXEC",
-                source: "[DBO].[PGSL_MON_START_TEL_MK]",
-                target: "@NRC"
-            },
+
             {
                 type: "EXEC",
                 source: "[DBO].[PGSL_MON_START_TEL_MK]",
@@ -24486,13 +23517,9 @@
                 source: "[DBO].[PGSL_MON_XMIT_LOAD_FI]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MON_XMIT_LOAD_FI]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MON_XMIT_LOAD_FI]",
                 target: "%S.\u0027,"
             },
@@ -24506,13 +23533,9 @@
                 source: "[DBO].[PGSL_MON_XMIT_LOAD_WL]",
                 target: "SETTLEMENT_GSL.DBO.PSR_GET_SR_VARIABLE"
             },
+
             {
                 type: "EXEC",
-                source: "[DBO].[PGSL_MON_XMIT_LOAD_WL]",
-                target: "@NRC"
-            },
-            {
-                type: "EXECUTE",
                 source: "[DBO].[PGSL_MON_XMIT_LOAD_WL]",
                 target: "%S.\u0027,"
             },
@@ -24670,8 +23693,8 @@
             });
         });
 
-        var width = 1200,
-            height = 750;
+        var width = 1600,
+            height = 1000;
 
         var force = d3.layout.force()
             .nodes(d3.values(nodes))
@@ -24688,7 +23711,7 @@
 
         // Per-type markers, as they don't inherit styles.
         svg.append("defs").selectAll("marker")
-            .data(["EXEC", "EXECUTE"])
+            .data(["EXEC", "EXEC"])
             .enter().append("marker")
             .attr("id", function (d) {
                 return d;
