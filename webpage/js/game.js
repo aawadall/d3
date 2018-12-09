@@ -83,7 +83,7 @@ Game.prototype = {
         // Add Shield
 
 
-        const boxSize = 10;
+        const boxSize = 1;
 
         for (let x = -150; x < 150; x += boxSize) {
             for (let y = -120; y < 190; y += boxSize) {
@@ -91,7 +91,7 @@ Game.prototype = {
                 //console.log("pivot = " + this.ship.pivot.x + " , " + this.ship.pivot.y);
                 const xDist = Math.sqrt((this.ship.pivot.x - x) * (this.ship.pivot.x -x)) ;
                 const yDist = Math.sqrt((this.ship.pivot.y - y) * (this.ship.pivot.y- y)) ;
-                console.log("xDist = " + xDist + " yDist = "+yDist);
+                //console.log("xDist = " + xDist + " yDist = "+yDist);
 
                 const blue  =  0x0000ff * (1 + Math.sin( xDist / 3000) ) /3;
                 const green =  0x00ff00 * (1 - Math.sin( yDist / 3000) ) /3;
