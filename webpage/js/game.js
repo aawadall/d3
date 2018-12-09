@@ -14,6 +14,10 @@ Game.prototype = {
     build : function () {
         this.drawStars();
         this.setupBoundaries();
+
+        // draw the ship to the scene
+        this.createShip();
+
         requestAnimationFrame(this.tick.bind(this));
     },
 
@@ -43,6 +47,21 @@ Game.prototype = {
 
         this.stage.addChild(walls);
         
+    },
+
+    createShip: function() {
+        // create a new ship object
+
+        this.ship = new PIXI.Graphics();
+        this.ship.beginFill(0x20d3fe);
+        this.ship.moveTo(0, 0);
+        this.ship.lineTo(-26, 60);
+        this.ship.lineTo(26, 60);
+        this.ship.endFill();
+
+        // Attach the ship tp the stage
+
+        this.stage.addChild(this.ship);
     },
 
     tick: function () {
