@@ -102,7 +102,7 @@ Game.prototype = {
                 this.ship.drawRect(x, y, boxSize, boxSize);
                 this.ship.endFill();
 
-                boxSize = Math.round(Math.random() * 10);
+                boxSize = Math.round(Math.random() * 10) + 20;
             }
         }
 
