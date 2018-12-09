@@ -45,6 +45,7 @@ Game.prototype = {
         walls.drawRect(0, this._height - 10, this._width, 10);
         walls.drawRect(0, 10, 10, this._height - 20);
 
+
         this.stage.addChild(walls);
         
     },
@@ -52,6 +53,7 @@ Game.prototype = {
     createShip: function() {
         // create a new ship object
 
+        // ship fusalage
         this.ship = new PIXI.Graphics();
         this.ship.beginFill(0x20d3fe);
         this.ship.moveTo(0, 0);
@@ -59,8 +61,15 @@ Game.prototype = {
         this.ship.lineTo(26, 60);
         this.ship.endFill();
 
-        // Attach the ship tp the stage
+        // add an engine
+        this.ship.beginFill(0x1495d1);
+        this.ship.drawRect(-15, 60, 30, 8);
+        this.ship.endFill();
 
+        // position the ship in the middle of the screen
+        this.ship.x = Math.round(this._width / 2);
+        this.ship.y = Math.round(this._height /2);
+        // Attach the ship tp the stage
         this.stage.addChild(this.ship);
     },
 
