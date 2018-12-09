@@ -1,8 +1,7 @@
 const Game = function () {
 
-    this.averageDirectionDelta = 0.001;
-    this.averageSpeed = 0.0;
-    this.beta = 0.95;
+
+    this.beta = 0.9;
 
     this._width = 1200;
     this._height = 720;
@@ -33,12 +32,23 @@ Game.prototype = {
             const rad = Math.ceil(Math.random() * 2);
             const alpha = Math.min(Math.random() * 0.25, 1 );
 
-            const red = Math.floor(Math.random() * 0xff0000);
-            const green = Math.floor(Math.random() * 0xff00);
-            const blue = Math.floor(Math.random() * 0xff);
+            const red = (Math.random() > 0.7) * 0xff0000;
+            const green = (Math.random() > 0.7) * 0x00ff00;
+            const blue = (Math.random() > 0.7) * 0x0000ff;
 
-            const colorBeta = 0.999;
-            const color = Math.round((red + green + blue) * (1- colorBeta) + (0xffffff) * colorBeta);
+            const colorBeta = 0.0;
+            let color = 0;
+            switch (Math.round(Math.random() * 4)) {
+                case 0 : color = 0xffffff;
+                break;
+                case 1:  color = 0xffeeee;
+                break;
+                case 2:  color = 0xeeeeff;
+                break;
+                default: color = 0xffffff;
+
+            }
+
             let star = new PIXI.Graphics();
             star.beginFill(color, alpha);
             star.drawCircle(x, y, rad);
@@ -83,53 +93,73 @@ Game.prototype = {
         // Add Shield
 
 
-        let boxSize = Math.round(Math.random() * 10);
+        /*
+        let boxSize = 1;
 
-        for (let x = -150; x < 150; x += boxSize) {
-            for (let y = -120; y < 190; y += boxSize) {
+        for (let x = -50; x < 50; x += boxSize ) {
+            for (let y = -20; y < 90; y += boxSize ) {
                 //console.log("x = " + x + " y = " + y);
                 //console.log("pivot = " + this.ship.pivot.x + " , " + this.ship.pivot.y);
                 const xDist = Math.sqrt((this.ship.pivot.x - x) * (this.ship.pivot.x -x)) ;
                 const yDist = Math.sqrt((this.ship.pivot.y - y) * (this.ship.pivot.y- y)) ;
                 //console.log("xDist = " + xDist + " yDist = "+yDist);
 
-                const blue  =  0x0000ff * (1 + Math.sin( xDist / 3000) ) /3;
-                const green =  0x00ff00 * (1 - Math.sin( yDist / 3000) ) /3;
-                const red   =  0xff0000 * (boxSize /  10) ;
-                const alpha = Math.max(Math.min( Math.cos( (-xDist*xDist - yDist*yDist) / 3000), 1), 0) /2;
+                const blue  =  0x0000ff * (1 + Math.sin( xDist / 3000) ) /2;
+                const green =  0x00ff00 * (1 - Math.sin( yDist / 3000) ) /2;
+                const red   =  0xff0000 * (boxSize /  2) ;
+                const alpha = Math.max(Math.min( 1- Math.exp(-Math.sqrt( xDist*xDist + yDist*yDist ) / 10), 1), 0) /2;
                 const color = Math.round(red + green + blue);
                 this.ship.beginFill(color, alpha);
+                //this.ship.drawCircle(x, y, boxSize);
                 this.ship.drawRect(x, y, boxSize, boxSize);
                 this.ship.endFill();
 
-                boxSize = Math.round(Math.random() * 10) + 20;
+                boxSize = Math.sqrt(xDist * xDist + yDist * yDist) / 30 + 1;
             }
         }
 
-
+        */
         // position the ship in the middle of the screen
         this.ship.x = Math.round(this._width / 2);
         this.ship.y = Math.round(this._height /2);
 
 
-        this.ship.rotation = 90;
+
         // Attach the ship tp the stage
         this.stage.addChild(this.ship);
+
+
     },
 
     tick: function () {
 
-        this.averageDirectionDelta = this.beta * this.averageDirectionDelta + (1 - this.beta) * (1 - Math.random() / 2) * 2 ;
-        const rotationDelta = this.averageDirectionDelta;
+        // Move North
+        Mousetrap.bind('up', function () {
+            this.ship.rotation = this.ship.rotation  * this.beta +
+                                 Math.PI * 0 * (1 - this.beta);
+        }.bind(this));
 
-        //this.ship.alpha = 1 - this.averageSpeed / 20;
+        // Move North
+        Mousetrap.bind('down', function () {
+            this.ship.rotation = this.ship.rotation  * this.beta +
+                Math.PI * 1 * (1 - this.beta);
+        }.bind(this));
 
-        this.averageSpeed = this.beta * this.averageSpeed + (1 - this.beta) * (1 - Math.random() /2) * 3;
-        const distance = this.averageSpeed;
-        this.ship.rotation = rotationDelta;
+        // Move North
+        Mousetrap.bind('right', function () {
+            this.ship.rotation = this.ship.rotation  * this.beta +
+                Math.PI * 0.5 * (1 - this.beta);
+        }.bind(this));
 
-        this.ship.x += Math.cos(this.ship.rotation - 3.14159/2) * distance;
-        this.ship.y += Math.sin(this.ship.rotation - 3.14159/2) * distance;
+        // Move North
+        Mousetrap.bind('left', function () {
+            this.ship.rotation = this.ship.rotation  * this.beta +
+                Math.PI * 1.5 * (1 - this.beta);
+        }.bind(this));
+
+        const distance = 0.1;
+        this.ship.x += Math.cos(this.ship.rotation - Math.PI/2) * distance;
+        this.ship.y += Math.sin(this.ship.rotation - Math.PI/2) * distance;
         this.renderer.render(this.stage);
         requestAnimationFrame(this.tick.bind(this));
     }
