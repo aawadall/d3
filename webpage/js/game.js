@@ -75,7 +75,7 @@ Game.prototype = {
         this.ship.pivot.y = 60;
 
         // Add Shield
-        /*
+
         const boxSize = 20;
         for (let x = -50; x < 50; x += boxSize) {
             for (let y = -10; y < 90; y += boxSize) {
@@ -96,7 +96,7 @@ Game.prototype = {
             }
         }
 
-        */
+
         // position the ship in the middle of the screen
         this.ship.x = Math.round(this._width / 6);
         this.ship.y = Math.round(this._height /2);
