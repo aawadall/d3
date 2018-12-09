@@ -83,7 +83,7 @@ Game.prototype = {
         // Add Shield
 
 
-        const boxSize = 1;
+        let boxSize = Math.round(Math.random() * 10);
 
         for (let x = -150; x < 150; x += boxSize) {
             for (let y = -120; y < 190; y += boxSize) {
@@ -95,12 +95,14 @@ Game.prototype = {
 
                 const blue  =  0x0000ff * (1 + Math.sin( xDist / 3000) ) /3;
                 const green =  0x00ff00 * (1 - Math.sin( yDist / 3000) ) /3;
-                const red   =  0xff0000 * (1 - Math.cos( Math.sqrt(xDist * xDist + yDist * yDist) /3300)) / 3;
+                const red   =  0xff0000 * (boxSize /  10) ;
                 const alpha = Math.max(Math.min( Math.cos( (-xDist*xDist - yDist*yDist) / 3000), 1), 0) /2;
                 const color = Math.round(red + green + blue);
                 this.ship.beginFill(color, alpha);
                 this.ship.drawRect(x, y, boxSize, boxSize);
                 this.ship.endFill();
+
+                boxSize = Math.round(Math.random() * 10);
             }
         }
 
@@ -120,9 +122,9 @@ Game.prototype = {
         this.averageDirectionDelta = this.beta * this.averageDirectionDelta + (1 - this.beta) * (1 - Math.random() / 2) * 2 ;
         const rotationDelta = this.averageDirectionDelta;
 
-        this.ship.alpha = 1 - this.averageSpeed / 20;
+        //this.ship.alpha = 1 - this.averageSpeed / 20;
 
-        this.averageSpeed = this.beta * this.averageSpeed + (1 - this.beta) * (1 - Math.random() /2) * 10;
+        this.averageSpeed = this.beta * this.averageSpeed + (1 - this.beta) * (1 - Math.random() /2) * 3;
         const distance = this.averageSpeed;
         this.ship.rotation = rotationDelta;
 
