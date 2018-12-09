@@ -2,7 +2,7 @@ const Game = function () {
 
     this.averageDirectionDelta = 0.001;
     this.averageSpeed = 0.0;
-    this.beta = 0.9995;
+    this.beta = 0.95;
 
     this._width = 1200;
     this._height = 720;
@@ -33,8 +33,14 @@ Game.prototype = {
             const rad = Math.ceil(Math.random() * 2);
             const alpha = Math.min(Math.random() * 0.25, 1 );
 
+            const red = Math.floor(Math.random() * 0xff0000);
+            const green = Math.floor(Math.random() * 0xff00);
+            const blue = Math.floor(Math.random() * 0xff);
+
+            const colorBeta = 0.999;
+            const color = Math.round((red + green + blue) * (1- colorBeta) + (0xffffff) * colorBeta);
             let star = new PIXI.Graphics();
-            star.beginFill(0xFFFFFF, alpha);
+            star.beginFill(color, alpha);
             star.drawCircle(x, y, rad);
             star.endFill();
 
@@ -71,25 +77,27 @@ Game.prototype = {
         this.ship.drawRect(-15, 60, 30, 8);
         this.ship.endFill();
 
-        this.ship.pivot.x = 26;
-        this.ship.pivot.y = 60;
+        this.ship.pivot.x = 0;
+        this.ship.pivot.y = 30;
 
         // Add Shield
 
-        const boxSize = 20;
-        for (let x = -50; x < 50; x += boxSize) {
-            for (let y = -10; y < 90; y += boxSize) {
+
+        const boxSize = 10;
+
+        for (let x = -150; x < 150; x += boxSize) {
+            for (let y = -120; y < 190; y += boxSize) {
                 //console.log("x = " + x + " y = " + y);
                 //console.log("pivot = " + this.ship.pivot.x + " , " + this.ship.pivot.y);
                 const xDist = Math.sqrt((this.ship.pivot.x - x) * (this.ship.pivot.x -x)) ;
                 const yDist = Math.sqrt((this.ship.pivot.y - y) * (this.ship.pivot.y- y)) ;
                 console.log("xDist = " + xDist + " yDist = "+yDist);
 
-                const blue =  xDist * 0xff;
-                const green = yDist * 0xffff;
-                const red = Math.max(Math.min(Math.sqrt(xDist*xDist + yDist*yDist) / 2 , 1) * 0xff0000, 0xff0000);
-                const alpha = Math.min(1 - Math.sqrt(xDist*xDist + yDist*yDist), 1) / 2;
-                const color = red + green + blue;
+                const blue  =  0x0000ff * (1 + Math.sin( xDist / 3000) ) /3;
+                const green =  0x00ff00 * (1 - Math.sin( yDist / 3000) ) /3;
+                const red   =  0xff0000 * (1 - Math.cos( Math.sqrt(xDist * xDist + yDist * yDist) /3300)) / 3;
+                const alpha = Math.max(Math.min( Math.cos( (-xDist*xDist - yDist*yDist) / 3000), 1), 0) /2;
+                const color = Math.round(red + green + blue);
                 this.ship.beginFill(color, alpha);
                 this.ship.drawRect(x, y, boxSize, boxSize);
                 this.ship.endFill();
@@ -98,7 +106,7 @@ Game.prototype = {
 
 
         // position the ship in the middle of the screen
-        this.ship.x = Math.round(this._width / 6);
+        this.ship.x = Math.round(this._width / 2);
         this.ship.y = Math.round(this._height /2);
 
 
@@ -109,12 +117,12 @@ Game.prototype = {
 
     tick: function () {
 
-        this.averageDirectionDelta = this.beta * this.averageDirectionDelta + (1 - this.beta) * (1 - Math.random() / 2) ;
+        this.averageDirectionDelta = this.beta * this.averageDirectionDelta + (1 - this.beta) * (1 - Math.random() / 2) * 2 ;
         const rotationDelta = this.averageDirectionDelta;
 
-        this.ship.alpha = 1 - this.averageSpeed;
+        this.ship.alpha = 1 - this.averageSpeed / 20;
 
-        this.averageSpeed = this.beta * this.averageSpeed + (1 - this.beta) * (1 - Math.random() /2) * 0.99;
+        this.averageSpeed = this.beta * this.averageSpeed + (1 - this.beta) * (1 - Math.random() /2) * 10;
         const distance = this.averageSpeed;
         this.ship.rotation = rotationDelta;
 
