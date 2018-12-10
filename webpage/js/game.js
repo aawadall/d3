@@ -40,11 +40,7 @@ Game.prototype = {
             const rad = Math.ceil(Math.random() * 2);
             const alpha = Math.min(Math.random() * 0.25, 1 );
 
-            const red = (Math.random() > 0.7) * 0xff0000;
-            const green = (Math.random() > 0.7) * 0x00ff00;
-            const blue = (Math.random() > 0.7) * 0x0000ff;
 
-            const colorBeta = 0.0;
             let color = 0;
             switch (Math.round(Math.random() * 4)) {
                 case 0 : color = 0xffffff;
@@ -84,7 +80,8 @@ Game.prototype = {
 
         this.ship = new p2.Body({
             mass: 1,
-            angularVelocity: 1,
+
+            angularVelocity: 0,
             damping: 0,
             angularDamping: 0,
             position: [
@@ -123,6 +120,7 @@ Game.prototype = {
     },
 
     moveShip: function() {
+        /*
         // Move North
         Mousetrap.bind('up', function () {
             this.speed +=  (1 - this.beta);
@@ -132,7 +130,7 @@ Game.prototype = {
         Mousetrap.bind('down', function () {
             this.speed -=  (1 - this.beta);
         }.bind(this));
-
+        */
         // Move North
         Mousetrap.bind('right', function () {
             this.shipGraphics.rotation += Math.PI * 0.5 * (1 - this.beta);
@@ -151,15 +149,17 @@ Game.prototype = {
     updatePhysics: function(){
 
         // Apply Physics simulation to graphics
-
+        this.shipGraphics.x = this.ship.position[0];
+        this.shipGraphics.y = this.ship.position[1];
+        this.shipGraphics.rotation = this.ship.angle;
         // Step Physics simulatin forward
         this.world.step(1/60);
     },
     tick: function () {
 
-        this.updatePhysics();
+      this.updatePhysics();
       this.moveShip();
-        this.renderer.render(this.stage);
-        requestAnimationFrame(this.tick.bind(this));
+      this.renderer.render(this.stage);
+      requestAnimationFrame(this.tick.bind(this));
     }
 };
