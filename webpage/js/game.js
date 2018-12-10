@@ -17,8 +17,17 @@ const Game = function () {
 
     });
 
-    this.speed = 1;
+    this.speed = 100;
     this.turnSpeed = 2;
+
+    window.addEventListener('keydown', function (event) {
+
+        this.handleKeys(event.keyCode, true);
+    }.bind(this), false);
+
+    window.addEventListener('keyup', function (event) {
+        this.handleKeys(event.keyCode, false);
+    }.bind(this), false);
     this.build();
 };
 
@@ -80,10 +89,10 @@ Game.prototype = {
 
         this.ship = new p2.Body({
             mass: 1,
+            angularVelocity: 0,
 
-            angularVelocity: 1,
             damping: 0,
-            angularDamping: 0.01,
+            angularDamping: 0,
             position: [
                 Math.round(this._width / 2),
                 Math.round(this._height /2)
@@ -115,40 +124,54 @@ Game.prototype = {
 
         // Attach the ship tp the stage
         this.stage.addChild(this.shipGraphics);
-        console.log("Ship Added");
-
     },
 
-    moveShip: function() {
-        /*
-        // Move North
-        Mousetrap.bind('up', function () {
-            this.speed +=  (1 - this.beta);
-        }.bind(this));
 
-        // Move North
-        Mousetrap.bind('down', function () {
-            this.speed -=  (1 - this.beta);
-        }.bind(this));
+    /**
+     * handle keypresses and filter them
+     * @param code : key Code pressed
+     * @param state : true or false
+     */
+    handleKeys: function(code, state) {
 
-        // Move North
-        Mousetrap.bind('right', function () {
-            this.shipGraphics.rotation += Math.PI * 0.5 * (1 - this.beta);
-        }.bind(this));
 
-        // Move North
-        Mousetrap.bind('left', function () {
-            this.shipGraphics.rotation -= Math.PI * 0.5 * (1 - this.beta);
-        }.bind(this));
-
-        const distance = this.speed;
-        this.shipGraphics.x += Math.cos(this.shipGraphics.rotation - Math.PI/2) * distance;
-        this.shipGraphics.y += Math.sin(this.shipGraphics.rotation - Math.PI/2) * distance;
-        */
+        switch (code) {
+        // left 37 , A 65
+        case 37:
+            this.keyLeft = state;
+            break;
+        // up 38, D 68
+        case 38:
+            this.keyUp = state;
+            break;
+        // right 39
+        case 39:
+            this.keyRight = state;
+            break;
+        // down 40
+        case 40:
+            this.keyDown = state;
+            break;
+    }
     },
 
     updatePhysics: function(){
 
+        // Update ship's angular velocity for rotation
+        if(this.keyLeft) {
+            this.ship.angularVelocity =  -1 * this.turnSpeed;
+        } else if (this.keyRight) {
+            this.ship.angularVelocity =   this.turnSpeed;
+        } else {
+            this.ship.angularVelocity = 0;
+        }
+
+        // Apply force vector
+        if(this.keyUp) {
+            const angle = this.ship.angle * Math.PI /2;
+            this.ship.force[0] -= this.speed * Math.cos(angle);
+            this.ship.force[1] -= this.speed * Math.sin(angle);
+        }
         // Apply Physics simulation to graphics
         this.shipGraphics.x = this.ship.position[0];
         this.shipGraphics.y = this.ship.position[1];
@@ -159,7 +182,7 @@ Game.prototype = {
     tick: function () {
 
       this.updatePhysics();
-      this.moveShip();
+
       this.renderer.render(this.stage);
       requestAnimationFrame(this.tick.bind(this));
     }
