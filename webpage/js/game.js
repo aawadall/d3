@@ -90,6 +90,7 @@ Game.prototype = {
         this.ship.pivot.x = 0;
         this.ship.pivot.y = 30;
 
+        this.speed = 0;
         // Add Shield
 
 
@@ -131,35 +132,34 @@ Game.prototype = {
 
     },
 
-    tick: function () {
-
+    moveShip: function() {
         // Move North
         Mousetrap.bind('up', function () {
-            this.ship.rotation = this.ship.rotation  * this.beta +
-                                 Math.PI * 0 * (1 - this.beta);
+            this.speed +=  (1 - this.beta);
         }.bind(this));
 
         // Move North
         Mousetrap.bind('down', function () {
-            this.ship.rotation = this.ship.rotation  * this.beta +
-                Math.PI * 1 * (1 - this.beta);
+            this.speed -=  (1 - this.beta);
         }.bind(this));
 
         // Move North
         Mousetrap.bind('right', function () {
-            this.ship.rotation = this.ship.rotation  * this.beta +
-                Math.PI * 0.5 * (1 - this.beta);
+            this.ship.rotation += Math.PI * 0.5 * (1 - this.beta);
         }.bind(this));
 
         // Move North
         Mousetrap.bind('left', function () {
-            this.ship.rotation = this.ship.rotation  * this.beta +
-                Math.PI * 1.5 * (1 - this.beta);
+            this.ship.rotation -= Math.PI * 0.5 * (1 - this.beta);
         }.bind(this));
 
-        const distance = 0.1;
+        const distance = this.speed;
         this.ship.x += Math.cos(this.ship.rotation - Math.PI/2) * distance;
         this.ship.y += Math.sin(this.ship.rotation - Math.PI/2) * distance;
+    },
+    tick: function () {
+
+      this.moveShip();
         this.renderer.render(this.stage);
         requestAnimationFrame(this.tick.bind(this));
     }
