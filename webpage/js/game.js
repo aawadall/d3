@@ -11,6 +11,14 @@ const Game = function () {
 
     this.stage = new PIXI.Stage();
 
+    // setup Physics simulation
+    this.world = new p2.World({
+        gravity: [0, 0],
+
+    });
+
+    this.speed = 1;
+    this.turnSpeed = 2;
     this.build();
 };
 
@@ -74,61 +82,43 @@ Game.prototype = {
     createShip: function() {
         // create a new ship object
 
+        this.ship = new p2.Body({
+            mass: 1,
+            angularVelocity: 1,
+            damping: 0,
+            angularDamping: 0,
+            position: [
+                Math.round(this._width / 2),
+                Math.round(this._height /2)
+            ]
+        });
+
+        this.shipShape = new p2.Rectangle(52, 69);
+        this.ship.addShape(this.shipShape);
+        this.world.addBody(this.ship);
+
         // ship fusalage
-        this.ship = new PIXI.Graphics();
-        this.ship.beginFill(0x20d3fe, 0.8);
-        this.ship.moveTo(0, 0);
-        this.ship.lineTo(-26, 60);
-        this.ship.lineTo(26, 60);
-        this.ship.endFill();
+        this.shipGraphics = new PIXI.Graphics();
+        this.shipGraphics.beginFill(0x20d3fe, 0.8);
+        this.shipGraphics.moveTo(0, 0);
+        this.shipGraphics.lineTo(-26, 60);
+        this.shipGraphics.lineTo(26, 60);
+        this.shipGraphics.endFill();
 
         // add an engine
-        this.ship.beginFill(0x1495d1, 0.8);
-        this.ship.drawRect(-15, 60, 30, 8);
-        this.ship.endFill();
+        this.shipGraphics.beginFill(0x1495d1, 0.8);
+        this.shipGraphics.drawRect(-15, 60, 30, 8);
+        this.shipGraphics.endFill();
 
-        this.ship.pivot.x = 0;
-        this.ship.pivot.y = 30;
-
-        this.speed = 0;
-        // Add Shield
-
-
-        /*
-        let boxSize = 1;
-
-        for (let x = -50; x < 50; x += boxSize ) {
-            for (let y = -20; y < 90; y += boxSize ) {
-                //console.log("x = " + x + " y = " + y);
-                //console.log("pivot = " + this.ship.pivot.x + " , " + this.ship.pivot.y);
-                const xDist = Math.sqrt((this.ship.pivot.x - x) * (this.ship.pivot.x -x)) ;
-                const yDist = Math.sqrt((this.ship.pivot.y - y) * (this.ship.pivot.y- y)) ;
-                //console.log("xDist = " + xDist + " yDist = "+yDist);
-
-                const blue  =  0x0000ff * (1 + Math.sin( xDist / 3000) ) /2;
-                const green =  0x00ff00 * (1 - Math.sin( yDist / 3000) ) /2;
-                const red   =  0xff0000 * (boxSize /  2) ;
-                const alpha = Math.max(Math.min( 1- Math.exp(-Math.sqrt( xDist*xDist + yDist*yDist ) / 10), 1), 0) /2;
-                const color = Math.round(red + green + blue);
-                this.ship.beginFill(color, alpha);
-                //this.ship.drawCircle(x, y, boxSize);
-                this.ship.drawRect(x, y, boxSize, boxSize);
-                this.ship.endFill();
-
-                boxSize = Math.sqrt(xDist * xDist + yDist * yDist) / 30 + 1;
-            }
-        }
-
-        */
-        // position the ship in the middle of the screen
-        this.ship.x = Math.round(this._width / 2);
-        this.ship.y = Math.round(this._height /2);
-
+        this.shipGraphics.pivot.x = 0;
+        this.shipGraphics.pivot.y = 30;
+        this.shipGraphics.x = 100;
+        this.shipGraphics.y = 500;
 
 
         // Attach the ship tp the stage
-        this.stage.addChild(this.ship);
-
+        this.stage.addChild(this.shipGraphics);
+        console.log("Ship Added");
 
     },
 
@@ -145,20 +135,29 @@ Game.prototype = {
 
         // Move North
         Mousetrap.bind('right', function () {
-            this.ship.rotation += Math.PI * 0.5 * (1 - this.beta);
+            this.shipGraphics.rotation += Math.PI * 0.5 * (1 - this.beta);
         }.bind(this));
 
         // Move North
         Mousetrap.bind('left', function () {
-            this.ship.rotation -= Math.PI * 0.5 * (1 - this.beta);
+            this.shipGraphics.rotation -= Math.PI * 0.5 * (1 - this.beta);
         }.bind(this));
 
         const distance = this.speed;
-        this.ship.x += Math.cos(this.ship.rotation - Math.PI/2) * distance;
-        this.ship.y += Math.sin(this.ship.rotation - Math.PI/2) * distance;
+        this.shipGraphics.x += Math.cos(this.shipGraphics.rotation - Math.PI/2) * distance;
+        this.shipGraphics.y += Math.sin(this.shipGraphics.rotation - Math.PI/2) * distance;
+    },
+
+    updatePhysics: function(){
+
+        // Apply Physics simulation to graphics
+
+        // Step Physics simulatin forward
+        this.world.step(1/60);
     },
     tick: function () {
 
+        this.updatePhysics();
       this.moveShip();
         this.renderer.render(this.stage);
         requestAnimationFrame(this.tick.bind(this));
