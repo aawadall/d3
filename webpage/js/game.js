@@ -81,9 +81,9 @@ Game.prototype = {
         this.ship = new p2.Body({
             mass: 1,
 
-            angularVelocity: 0,
+            angularVelocity: 1,
             damping: 0,
-            angularDamping: 0,
+            angularDamping: 0.01,
             position: [
                 Math.round(this._width / 2),
                 Math.round(this._height /2)
@@ -130,7 +130,7 @@ Game.prototype = {
         Mousetrap.bind('down', function () {
             this.speed -=  (1 - this.beta);
         }.bind(this));
-        */
+
         // Move North
         Mousetrap.bind('right', function () {
             this.shipGraphics.rotation += Math.PI * 0.5 * (1 - this.beta);
@@ -144,6 +144,7 @@ Game.prototype = {
         const distance = this.speed;
         this.shipGraphics.x += Math.cos(this.shipGraphics.rotation - Math.PI/2) * distance;
         this.shipGraphics.y += Math.sin(this.shipGraphics.rotation - Math.PI/2) * distance;
+        */
     },
 
     updatePhysics: function(){
